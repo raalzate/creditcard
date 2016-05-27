@@ -1,0 +1,18 @@
+var module = angular.module("creditcard");
+
+
+module.controller("saveController", function($scope, cardService, $location){	
+	$scope.guardarCard = function(){
+		var saveCard = cardService.saveCard();
+		
+		saveCard.success(function(data){
+			$location.url("/");
+		}).error(function(data, status, headers, config){
+			alert(headers("internalServerError"));
+		});
+	};
+	
+	$scope.regresar = function(){
+		
+	};
+});

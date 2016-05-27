@@ -84,14 +84,37 @@ public class CardBeanTest {
 		card.setCedula("1115069076");
 		card.setLabel("tarjeta visa express");
 		card.setStatus(0);
-		card.setMount(2);
+		card.setMount(20000);
+		card.setDateCut("YYYY/mm/dd");
 		
 		//act
 		boolean hasSaved = cardBean.create(card);
 		
+		//assert
 		Mockito.verify(entityManager).persist(card);
 		
 		Assert.assertTrue(hasSaved);
+	}
+	
+	@Test
+	public void debeEliminarLaTarjeta_id1(){
+		//arrange
+		Card card = new Card();
+		card.setId(1);
+		
+		Mockito.when(entityManager
+				.find(Card.class, card.getId()))
+				.thenReturn(card);
+		
+		//act
+		boolean hasDeleted = cardBean.delete(card);
+		
+		//assert
+		Mockito.verify(entityManager).find(Card.class, card.getId());
+		Mockito.verify(entityManager).remove(card);
+		Assert.assertTrue(hasDeleted);
+
+		
 	}
 	
 }

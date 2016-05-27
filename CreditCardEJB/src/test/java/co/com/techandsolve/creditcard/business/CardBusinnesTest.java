@@ -27,7 +27,7 @@ public class CardBusinnesTest {
 	CardBusinnes cardBusiness;
 
 	@Test
-	public void cuandoEsMasDe_1Mll_AgregarBonificar_20M() throws Exception {
+	public void cuandoEsMasDe_1Mll_AgregarBonificar_20M() throws LockedException {
 		// arrange
 		List<Card> expected = new ArrayList<Card>();
 
@@ -53,7 +53,7 @@ public class CardBusinnesTest {
 	}
 
 	@Test
-	public void cuandoEsMasDe_700M_AgregarBonificar_10M() throws Exception {
+	public void cuandoEsMasDe_700M_AgregarBonificar_10M() throws LockedException {
 		// arrange
 		List<Card> expected = new ArrayList<Card>();
 
@@ -73,7 +73,7 @@ public class CardBusinnesTest {
 	}
 
 	@Test
-	public void cuandoTieneBonos_noAgregarBonificacion() throws Exception {
+	public void cuandoTieneBonos_noAgregarBonificacion() throws LockedException {
 		// arrange
 		List<Card> expected = new ArrayList<Card>();
 
@@ -94,7 +94,7 @@ public class CardBusinnesTest {
 	}
 
 	@Test(expected = LockedException.class)
-	public void cuandoEstaBloqueadaUnaTarjenta() throws Exception {
+	public void cuandoEstaBloqueadaUnaTarjenta() throws LockedException {
 		// arrange
 		List<Card> expected = new ArrayList<Card>();
 
@@ -116,5 +116,40 @@ public class CardBusinnesTest {
 
 	
 	}
+	
+	@Test
+	public void cuandoSeCreaUnaTarjeta(){
+		//arrange
+		Card card = new Card();
+		card.setLabel("Tarjeta Visa Express");
+		card.setCedula("1115069076");
+		card.setMount(5000000);
+		card.setBonus(0);
+		
+		Mockito.when(cardBean.create(card)).thenReturn(true);
+		
+		//act
+		cardBusiness.createCard(card);
+		
+		//assert
+		
+		Mockito.verify(cardBean).create(card);
+	}
+	
+	@Test
+	public void cuandoSeEliminaUnaTarjeta(){
+		//arrange
+		Card card = new Card();
+		card.setId(1);
+		
+		Mockito.when(cardBean.delete(card)).thenReturn(true);
+		
+		//act
+		cardBusiness.deleteCard(card);
+		
+		//assert
+		Mockito.verify(cardBean).delete(card);
+	}
+	
 
 }

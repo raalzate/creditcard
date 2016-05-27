@@ -187,3 +187,15 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-27 10:02:29.277
 !MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2016-05-27 11:52:05.597
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-05-27 11:52:05.698
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-27 11:52:05.754
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-27 11:59:32.765
+!MESSAGE Server Startup Succeeded

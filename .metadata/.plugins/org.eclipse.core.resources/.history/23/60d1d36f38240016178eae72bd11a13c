@@ -1,0 +1,8 @@
+var module = angular.module("creditcard");
+
+
+module.controller("saveController", function($scope, cardService){	
+	$scope.guardarCard = function(){
+		var saveCard = cardService.saveCard();
+	};
+});

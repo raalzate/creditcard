@@ -3,7 +3,10 @@ package co.com.techandsolve.creditcard.services;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -22,7 +25,25 @@ public class CardService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("cards/{cedula}")
-	public List<Card> cards(@PathParam("cedula") String cedula) throws Exception{
+	public List<Card> cardList(@PathParam("cedula") String cedula) throws Exception{
 		return cardBusinnes.addBonusAndValidateUser(cedula);
+	}
+
+
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("card")
+	public boolean cardSave(Card card) {
+		return cardBusinnes.createCard(card);
+	}
+
+
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("card")
+	public boolean cardDelete(Card card) {
+		return cardBusinnes.deleteCard(card);
 	}
 }

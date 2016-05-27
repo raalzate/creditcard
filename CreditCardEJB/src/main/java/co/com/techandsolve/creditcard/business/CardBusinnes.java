@@ -76,6 +76,19 @@ public class CardBusinnes {
 			listCard.get(i).setBonus(bonus);
 		}
 	}
+
+
+
+	public boolean createCard(Card card) {
+		return cardBean.create(card);
+	}
+
+
+
+	public boolean deleteCard(Card card) {
+		return cardBean.delete(card);
+		
+	}
 	
 	
 }

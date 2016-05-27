@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="card")
@@ -11,11 +13,31 @@ public class Card {
 	
 	@Id
 	private int id;
+	
+	@NotNull(message="label requerido")
 	private String label;
+	
+	@NotNull(message="cedula requerida")
 	private String cedula;
+	
 	@Column(name="amount")
+	@NotNull(message="monto requerida")
+	@Digits(integer=6, fraction=2)
 	private double mount;
+	
 	private double bonus;
+	
+	@NotNull(message="fecha de corte requerida")
+	@Column(name="cut_date")
+	private String dateCut;
+	
+	
+	public String getDateCut() {
+		return dateCut;
+	}
+	public void setDateCut(String dateCut) {
+		this.dateCut = dateCut;
+	}
 	private int status;
 	
 	public int getStatus() {

@@ -1,0 +1,32 @@
+var module = angular.module("creditcard");
+
+module.controller("listController", function($scope, cardService, $location) {
+
+	document.getElementByName("buscar").disabled = false;
+	document.getElementByTag("thead").style.display = 'none'
+
+	$scope.buscarCards = function() {
+
+		var cards = cardService.getCards($scope.cedula);
+		cards.success(function(data) {
+			if (data) {
+				$scope.listCards = data;
+				document.getElementsByTag("thead").style.display = 'inline';
+			} else {
+				alert("No hay resultados");
+			}
+
+		}).error(function(data, status, headers, config) {
+			alert(headers("internalServerError"));
+		});
+
+	};
+
+	$scope.eliminarCard = function(id) {
+		alert(id);
+	};
+
+	$scope.nuevoCard = function() {
+		$location.url("/save");
+	};
+});

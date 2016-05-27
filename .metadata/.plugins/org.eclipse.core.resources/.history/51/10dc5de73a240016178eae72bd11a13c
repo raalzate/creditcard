@@ -1,0 +1,23 @@
+<h2>LISTAR CARD</h2>
+<div ng-controller="listController">
+	<input type="text" name="cedula" ng-model="cedula">
+
+	<button name="buscar" ng-click="buscarCards()">Buscar</button>
+
+	<table>
+	<thead>
+		<tr><th>Label</th></tr>
+	</thead>
+	<tbody ng-repeat="card in listCards">
+		<tr name="card">
+			<td>{{card.label}}</td>
+			<td>{{card.mount | currency:"$"}}</td>
+			<td>{{card.cedula}}</td>
+			<td>{{card.bonus}}</td>
+		</tr>
+	</tbody>
+	<table>
+
+	<button name="new" ng-click="nuevoCard()">Nuevo</button>
+
+</div>

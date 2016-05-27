@@ -1,0 +1,10 @@
+<h2>GUARDAR CARDS</h2>
+<div ng-controller="saveController">
+	<input type="text" name="cedula" placeholder="Cedula" ng-model="cedula"> <br />
+	<input type="text" name="label" placeholder="Label" ng-model="label"> <br />
+	<input type="text" name="mount" placeholder="Monto" ng-model="mount"> <br />
+	
+	<button name="save" ng-click="guardarCard()">Guardar</button>
+	<button name="return" ng-click="regresar()">Regresar</button>
+	
+</div>
