@@ -31,6 +31,7 @@ public class ListarFeature {
 	@After("@listar")
 	public void after(){
 		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '22222';");
+		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '11111';");
 	}
 	
 	
