@@ -106,6 +106,7 @@ public class ListarFeature {
 			}
 			index++;
 		}
+		webDriver.close();
 		
 	}
 	
