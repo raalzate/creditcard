@@ -1,0 +1,7 @@
+Feature:listar tarjetas
+
+@listar
+Scenario: listar por cedula
+	Given Dado que el usuario ingresa a la aplicacion
+	When  El usuario busque con la cedula 2333
+	Then debe aparcer el usuario 2333

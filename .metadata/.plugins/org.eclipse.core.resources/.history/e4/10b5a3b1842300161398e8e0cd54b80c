@@ -1,0 +1,14 @@
+<html ng-app="creditcard">
+<head>
+	<script src="js/ext/angular.min.js"></script>
+	<script src="js/ext/angular-route.min.js"></script>
+	
+	<script src="js/modules/app.js"></script>
+	<script src="js/services/cardService.js"></script>
+	<script src="js/controllers/listController.js"></script>
+	<script src="js/controllers/saveController.js"></script>
+</head>
+<body >
+	
+</body>
+</html>

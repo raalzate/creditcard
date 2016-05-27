@@ -1,0 +1,60 @@
+package co.com.techandsolve.creditcard.business;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import co.com.techandsolve.creditcard.bean.CardBean;
+import co.com.techandsolve.creditcard.entities.Card;
+
+@RunWith(MockitoJUnitRunner.class)
+public class CardBusinnesTest {
+
+	public static final String CEDULA ="1234";
+
+	@Mock
+	CardBean cardBean;
+	
+	@InjectMocks
+	CardBusinnes cardBusiness;
+	
+	@Test 
+	public void cuandoEsMasDe_1Mill_AgregarBonificar_2Millones(){
+		//arrange
+		List<Card> expected = new  ArrayList<Card>();
+		List<Card> expected2 = new  ArrayList<Card>();
+
+		Card card1 = new Card();
+		card1.setMount(1000000);
+		expected.add(card1); 
+		
+		Card card2 = new Card();
+		card2.setMount(10000);
+		expected.add(card2); 
+		
+		Mockito.when(cardBean.getCardByCC(CEDULA)).thenReturn(expected);
+		
+
+		Card card3 = new Card();
+		card3.setBonus(20000);
+		expected2.add(card3); 
+		
+		Card card4 = new Card();
+		card4.setBonus(20000);
+		expected2.add(card4);
+		
+		//act
+		List<Card> lstResult = cardBusiness.addBonusAndValidateUser(CEDULA);
+		
+		//assert
+		Assert.assertEquals(lstResult, expected2);
+
+	}
+}

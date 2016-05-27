@@ -1,0 +1,16 @@
+<html ng-app="creditcard">
+<head>
+<script src="js/ext/angular.min.js"></script>
+<script src="js/modules/app.js"></script>
+<script src="js/controllers/cardController.js"></script>
+</head>
+<body ng-controller="listController">
+	<input type="text" name="cedula" ng-model="cedula"> 
+	
+	<button name="buscar" ng-click="buscarCards">Buscar</button>
+	
+	<div ng-repeat="card in listCards">
+	
+	</div>
+</body>
+</html>

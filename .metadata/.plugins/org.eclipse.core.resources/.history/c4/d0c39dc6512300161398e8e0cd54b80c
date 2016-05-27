@@ -1,0 +1,58 @@
+package co.com.techandsolve.creditcard.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import junit.framework.Assert;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import co.com.techandsolve.creditcard.business.Card;
+
+@RunWith(MockitoJUnitRunner.class)
+public class CardBeanTest {
+
+	@Mock
+	EntityManager entityManager;
+	
+	@Mock
+	TypedQuery<Card> query;
+	
+	@InjectMocks
+	CardBean cardBean;
+	
+	public static final String CEDULA ="1234";
+	
+	
+	@Test
+	public void debeFiltrarLasTarjetasPorLaCedulaYRetornarlas(){
+		
+		//arrange
+		List<Card> expected = new  ArrayList<Card>();
+		cards.add(new Card()); 
+		cards.add(new Card()); 
+		
+		Mockito.when(entityManager
+				.createQuery("Select p From Card Where p.cedula = :cedula"))
+				.thenReturn(query);
+		
+		Mockito.when(query.getResultList()).thenReturn(cards);
+		
+		//act
+		List<Card> lstResult = cardBean.getCardByCC(CEDULA);
+		
+		//assert
+		Assert.assertEquals(expected, lstResult);
+		
+		
+	}
+	
+}

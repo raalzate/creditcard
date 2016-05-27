@@ -1,0 +1,23 @@
+package co.com.techandsolve.creditcard.bean;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import co.com.techandsolve.creditcard.business.Card;
+
+@Stateless
+public class CardBean {
+
+	@PersistenceContext
+	EntityManager entityManager;
+	
+	public List<Card> getCards(){
+		TypedQuery<Card> query = entityManager.createQuery("Select p From Card p", 
+				Card.class);
+		return query.getResultList();
+	}
+}

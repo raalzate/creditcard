@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CreditCardWeb" project="CreditCardWeb" tests="7" started="7" failures="0" errors="2" ignored="0">
+  <testsuite name="co.com.techandsolve.testatdd.CucumberConfig" time="4.251">
+    <testsuite name="Feature: listar tarjetas" time="4.251">
+      <testsuite name="Scenario: listar por cedula" time="0.36">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: listar por cedula" time="0.185"/>
+        <testcase name="When El usuario busque con la cedula 11111" classname="Scenario: listar por cedula" time="0.026"/>
+        <testcase name="Then debe aparcer el usuario 11111" classname="Scenario: listar por cedula" time="0.149"/>
+      </testsuite>
+      <testsuite name="Scenario: tarjetas bloqueadas" time="0.304" incomplete="true">
+        <error>org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: locked card): locked card
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'raulalzate-ThinkPad-Edge-E440', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-22-generic', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: f4499bef-ca22-4316-82dc-2e640232ebc7
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:521)
+	at co.com.techandsolve.testatdd.ListarFeature.debe_aparecer_una_alerta_especificando_el_error(ListarFeature.java:81)
+	at ✽.Then Debe aparecer una alerta especificando el error "locked card"(listarCards.feature:13)
+
+</error>
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: tarjetas bloqueadas" time="0.224"/>
+        <testcase name="When El usuario busque con la cedula 22222" classname="Scenario: tarjetas bloqueadas" time="0.076"/>
+        <testcase name="Then Debe aparecer una alerta especificando el error &quot;locked card&quot;" classname="Scenario: tarjetas bloqueadas" time="0.004">
+          <error>org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: locked card): locked card
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'raulalzate-ThinkPad-Edge-E440', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-22-generic', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: f4499bef-ca22-4316-82dc-2e640232ebc7
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:521)
+	at co.com.techandsolve.testatdd.ListarFeature.debe_aparecer_una_alerta_especificando_el_error(ListarFeature.java:81)
+	at ✽.Then Debe aparecer una alerta especificando el error "locked card"(listarCards.feature:13)
+
+</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.services.CardServiceTest" time="0.021">
+    <testcase name="debeListarLasTarjetas" classname="co.com.techandsolve.services.CardServiceTest" time="0.021"/>
+  </testsuite>
+</testrun>

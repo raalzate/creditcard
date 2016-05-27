@@ -1,0 +1,11 @@
+var module = angular.module("creditcard");
+
+module.service("listService", function($http){
+	function nombre(){
+		
+	}
+	
+	return {	        
+		getNombre: nombre
+	}
+});

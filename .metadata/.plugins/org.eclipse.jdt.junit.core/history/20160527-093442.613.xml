@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CreditCardWeb" project="CreditCardWeb" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="co.com.techandsolve.testatdd.CucumberConfig" time="0.651">
+    <testsuite name="Feature: listar tarjetas" time="0.651">
+      <testsuite name="Scenario: listar por cedula" time="0.651">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: listar por cedula" time="0.194"/>
+        <testcase name="When El usuario busque con la cedula 11111" classname="Scenario: listar por cedula" time="0.137"/>
+        <testcase name="Then debe aparcer el usuario 11111" classname="Scenario: listar por cedula" time="0.32"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.services.CardServiceTest" time="0.015">
+    <testcase name="debeListarLasTarjetas" classname="co.com.techandsolve.services.CardServiceTest" time="0.015"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,6 @@
+var module = angular.module("creditcard");
+
+
+module.controller("listController", function($scope){
+	$scope.test = "hola mundo";
+});

@@ -1,0 +1,66 @@
+apply plugin: 'ear'
+apply plugin: 'java'
+apply plugin: 'war'
+
+group = 'co.com.techandsolve.creditcard'
+
+sourceCompatibility = '1.6'
+
+test.dependsOn(":CreditCardEJB:test",":CreditCardWeb:test")
+
+repositories {
+	mavenCentral();		
+}
+
+
+dependencies {
+	deploy project(path:':CreditCardEJB', configuration:'archives')
+	deploy project(path:':CreditCardWeb', configuration:'archives')
+	earlib 'commons-beanutils:commons-beanutils:1.9.2'
+	earlib 'com.google.guava:guava:18.0'
+	earlib 'com.squareup.retrofit:retrofit:1.9.0' 
+}
+
+ear {
+	archiveName = "${baseName}.${extension}"
+}
+
+task deploy(dependsOn: 'test' , type: Copy) {
+
+     println "Configurando Despliegue"
+
+     from('build/libs/') {
+          include '*.ear'
+     }
+
+     def target="${project.name}.ear"
+     def JBOSS_HOME = "/home/raul-alzate/Documents/jboss-eap-6.4"
+
+     into "$JBOSS_HOME"+"/standalone/deployments/"
+
+     println "${JBOSS_HOME}/standalone/deployments/${target}.deployed"
+     def ok=new File("${JBOSS_HOME}/standalone/deployments/${target}.deployed");
+     def nok=new File("${JBOSS_HOME}/standalone/deployments/${target}.failed");
+
+     doFirst {
+          println "Borrando ear anteriores"
+          if(ok.exists()) { ok.delete() }
+          if(nok.exists()) { nok.delete() }
+
+     }
+
+     doLast {
+          println "ejecutando ear..."
+          def deployed=false
+          for(def i=0;i<80;i++) {
+
+               if(ok.exists()) { deployed=true; break }
+               if(nok.exists()) { break }
+               sleep(500);
+          }
+
+          if(deployed) { println("despligue exitoso.") }
+          else { throw new RuntimeException("Despligue fallido, ver jboss logs!") }
+     }
+}
+

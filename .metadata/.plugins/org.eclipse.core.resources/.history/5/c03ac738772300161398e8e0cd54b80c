@@ -1,0 +1,21 @@
+package co.com.techandsolve.creditcard.services;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import co.com.techandsolve.creditcard.entities.Card;
+
+public class CardService {
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("cards")
+	public List<Card> cards(){
+		return null;
+	}
+}

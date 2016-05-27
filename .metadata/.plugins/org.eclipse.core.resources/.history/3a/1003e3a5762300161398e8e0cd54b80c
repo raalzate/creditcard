@@ -1,0 +1,37 @@
+package co.com.techandsolve.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+
+import co.com.techandsolve.creditcard.business.CardBusinnes;
+import co.com.techandsolve.creditcard.entities.Card;
+import co.com.techandsolve.creditcard.services.CardService;
+
+
+public class CardServiceTest {
+
+	private static final String CEDULA = "1234";
+	
+	@Mock
+	private CardBusinnes cardBusinnes;
+	
+	@InjectMocks
+	private CardService cardService;
+	
+	@Test
+	public void debeListarLasTarjetas() throws Exception{
+		//arrange
+		
+		List<Card> expected = new ArrayList<Card>();
+		
+		Mockito.when(cardBusinnes.addBonusAndValidateUser(CEDULA))
+		.thenReturn(value);
+		//act
+		//asserts
+	}
+}

@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: "jacoco"
+
+[ compileJava, compileTestJava ]*.options*.encoding = 'UTF-8'
+
+sourceCompatibility = '1.8'
+
+group = 'co.com.gco.procesadorpreaprobados'
+
+dependenccies {
+	compile 'GcoArquitectura:SecurityServicesAPI:1.1'
+	compile 'com.google.guava:guava:18.0'
+	compile 'org.jboss.spec:jboss-javaee-6.0:3.0.3.Final'
+	compile 'org.hornetq:hornetq-core-client:2.3.0.Final'
+	compile 'org.hornetq:hornetq-jms-client:2.4.5.Final'
+	compile 'commons-beanutils:commons-beanutils:1.9.2'
+	compile 'com.squareup.retrofit:retrofit:1.9.0'
+	compile 'org.rundeck:rundeck-api-java-client:13.0'	
+	testCompile 'junit:junit:4.11'
+	testCompile 'org.mockito:mockito-all:1.9.5'
+	testCompile 'org.easytesting:fest-assert-core:2.0M10'
+	testCompile 'com.googlecode.catch-exception:catch-exception:1.2.0'
+	testCompile 'net.java.quickcheck:quickcheck:0.6'
+	testCompile 'org.hibernate:hibernate-validator:3.1.0.GA'
+	testCompile 'org.powermock:powermock-module-junit4:1.5'
+    testCompile 'org.powermock:powermock-api-mockito:1.5'
+}
+
+repositories {
+	mavenCentral()	
+	maven {
+		url 'http://gesconf2.corp.gco.com.co:8081/artifactory/libs-release'
+	} 
+}
+
+test{
+ reports.junitXml.destination="../ProcesadorClientesPreaprobadosEAR/build/test-results"
+ 
+ jacoco {
+  destinationFile = file("../ProcesadorClientesPreaprobadosEAR/build/jacoco/jacoco.exec")
+  append=true
+ }
+}
+
+jar {
+	archiveName = "${baseName}.${extension}"
+}

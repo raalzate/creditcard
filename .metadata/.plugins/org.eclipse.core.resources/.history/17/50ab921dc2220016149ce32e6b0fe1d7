@@ -1,0 +1,37 @@
+package co.com.techandsolve.creditcard.business;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="card")
+public class Card {
+	
+	@Id
+	private int id;
+	private String label;
+	private double mount;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getLabel() {
+		return label;
+	}
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	public double getMount() {
+		return mount;
+	}
+	public void setMount(double mount) {
+		this.mount = mount;
+	}
+	
+	
+}

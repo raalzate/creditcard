@@ -1,0 +1,40 @@
+package co.com.techandsolve.testatdd;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class ListarFeature {
+	
+	WebDriver webDriver;
+	
+	@Given("^Dado que el usuario ingresa a la aplicacion$")
+	public void dado_que_el_usuario_ingresa_a_la_aplicacion() throws Throwable {
+		webDriver = new FirefoxDriver();
+		webDriver.get("http://localhost:8080/CreditCardWeb/");
+	}
+
+	@When("^El usuario busque con la cedula (\\d+)$")
+	public void el_usuario_busque_con_la_cedula(int cedula) throws Throwable {
+		WebElement cedulaElement = webDriver.findElement(By.name("cedula"));
+		WebElement buscarElement = webDriver.findElement(By.name("buscar"));
+
+		cedulaElement.sendKeys("1234");
+		buscarElement.click();
+		
+		
+	}
+
+	@Then("^debe aparcer el usuario (\\d+)$")
+	public void debe_aparcer_el_usuario(int cedula) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+	
+}

@@ -1,0 +1,7 @@
+angular.module("creditcard",["ngRoute"]).
+config(function($routeProvider){
+	$routeProvider.when("/", {
+		controller:'listController',
+		templateUrl:'index.html'
+	});
+});

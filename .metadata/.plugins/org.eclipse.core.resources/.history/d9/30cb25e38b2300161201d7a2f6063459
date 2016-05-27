@@ -1,0 +1,28 @@
+package co.com.techandsolve.testatdd;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class ListarFeature {
+	
+	@Given("^Dado que el usuario ingresa a la aplicacion$")
+	public void dado_que_el_usuario_ingresa_a_la_aplicacion() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^El usuario busque con la cedula (\\d+)$")
+	public void el_usuario_busque_con_la_cedula(int arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^debe aparcer el usuario (\\d+)$")
+	public void debe_aparcer_el_usuario(int arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+	
+}

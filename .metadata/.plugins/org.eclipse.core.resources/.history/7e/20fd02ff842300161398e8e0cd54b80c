@@ -1,0 +1,18 @@
+var module = angular.module("creditcard");
+
+
+module.controller("listController", function($scope, listService, $location){	
+	$scope.buscarCards = function(){
+		var cards = listService.getCards($scope.cedula);
+		
+		cards.success(function(data){
+			$scope.listCards = data;
+		}).error(function(e){
+			
+		});
+	};
+	
+	$scope.nuevoCard = function(){
+		
+	};
+});

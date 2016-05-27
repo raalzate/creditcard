@@ -1,0 +1,39 @@
+package co.com.techandsolve.creditcard.fizzbuzz;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class FizzBuzzTest {
+	
+	@Test
+	public void whenIsendOneShouldReturnFizz(){
+		//arrange
+		Fizz fizz = new Fizz();
+		//act
+		String result = fizz.get(1);
+		//assert
+		Assert.assertEquals("Fizz", result);
+	}
+	
+	@Test
+	public void whenIsendTwoShouldReturnFizz(){
+		//arrange
+		Fizz fizz = new Fizz();
+		//act
+		String result = fizz.get(2);
+		//assert
+		Assert.assertEquals("Fizz", result);
+	}
+	
+	@Test
+	public void whenIsendThreeShouldReturnFizz(){
+		//arrange
+		Fizz fizz = new Fizz();
+		//act
+		String result = fizz.get(3);
+		//assert
+		Assert.assertEquals("Buzz", result);
+	}
+	
+	
+}

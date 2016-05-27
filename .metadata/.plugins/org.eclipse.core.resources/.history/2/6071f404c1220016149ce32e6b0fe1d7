@@ -1,0 +1,10 @@
+package co.com.techandsolve.creditcard.business;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="card")
+public class Card {
+
+}

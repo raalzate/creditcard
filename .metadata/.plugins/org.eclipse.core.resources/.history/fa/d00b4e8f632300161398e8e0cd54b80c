@@ -1,0 +1,55 @@
+package co.com.techandsolve.creditcard.business;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import co.com.techandsolve.creditcard.bean.CardBean;
+import co.com.techandsolve.creditcard.entities.Card;
+
+/*
+ * Propiedades: Numero_tarjeta, Id_cliente, Bonificacion, Monto, Estado, Fecha-Corte
+ * 
+ * Las bonificaciones se manejan de la siguiente manera: 
+ * 
+ * Cuando tenga mas de 1 millon en el monto de las tarjetas añadir 20000 de 
+ * bonificación para cada tarjeta
+ * 
+ * Cuando sea de 700 mill a 1 millon añadir 10000 de bonificación para cada tarjeta, 
+ * 
+ * Siempre que el cliente tenga bonificación en por lo menos una tarjeta no se puede añadir bonificación.
+ * 
+ * 
+ * Cuando la tarjeta este bloqueada enviar un mensaje al usuario diciendo 
+ * que tiene tarjeta bloqueada
+ */
+public class CardBusinnes {
+
+	private List<Card> cards;
+	private static final double SUM_MOUNT_2M = 2000;
+	
+	@Inject
+	private CardBean cardBean;
+
+
+	public List<Card> addBonusAndValidateUser(String cedula){
+		List<Card> listCard = cardBean.getCardByCC(cedula);
+		
+		//Validaciones
+		double sumMount = 0;
+		for(Card card : listCard) {
+			sumMount += card.getMount();
+		}
+		
+		if(sumMount == SUM_MOUNT_2M) {
+			
+		}
+		return listCard;
+	}
+	
+	
+
+
+	
+	
+}

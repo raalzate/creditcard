@@ -1,0 +1,14 @@
+package co.com.techandsolve.creditcard.services;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
+@Path("helloword")
+public class HelloWordService {
+
+	@GET
+	@Path("sayWS")
+	public String saySW(){
+		return null;
+	}
+}

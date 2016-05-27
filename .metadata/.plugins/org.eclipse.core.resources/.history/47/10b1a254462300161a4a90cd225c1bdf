@@ -1,0 +1,12 @@
+package co.com.techandsolve.creditcard.fizzbuzz;
+
+
+public class Fizz {
+	
+
+	public void get(int i) {
+		
+		
+	}
+
+}

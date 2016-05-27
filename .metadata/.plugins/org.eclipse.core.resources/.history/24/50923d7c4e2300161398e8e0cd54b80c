@@ -1,0 +1,27 @@
+package co.com.techandsolve.creditcard.bean;
+
+import javax.persistence.EntityManager;
+import javax.smartcardio.Card;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+
+@RunWith(MockitoJUnitRunner.class)
+public class CardBeanTest {
+
+	@Mock
+	EntityManager entityManager;
+	
+	@InjectMocks
+	CardBean cardBean;
+	
+	@Test
+	public void debeFiltrarLasTarjetasPorLaCedulaYRetornarlas(){
+		List<Card> card = cardBean.getCardByCC();
+		
+	}
+	
+}

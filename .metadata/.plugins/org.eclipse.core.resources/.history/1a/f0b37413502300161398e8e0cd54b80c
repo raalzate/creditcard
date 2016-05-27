@@ -1,0 +1,50 @@
+package co.com.techandsolve.creditcard.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import junit.framework.Assert;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import co.com.techandsolve.creditcard.business.Card;
+
+@RunWith(MockitoJUnitRunner.class)
+public class CardBeanTest {
+
+	@Mock
+	EntityManager entityManager;
+	
+	@InjectMocks
+	CardBean cardBean;
+	
+	
+	
+	@Test
+	public void debeFiltrarLasTarjetasPorLaCedulaYRetornarlas(){
+		
+		//arrange
+		List<Card> cards = new  ArrayList<Card>();
+		cards.add(new Card()); 
+		
+		//act
+		
+		
+		//assert
+		
+		
+		
+		 
+		Mockito.when(cardBean.getCardByCC(1234)).thenReturn(cards);
+		
+		
+	}
+	
+}

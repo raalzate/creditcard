@@ -1,0 +1,4 @@
+
+	<input type="text" name="cedula" ng-model="cedula"> 
+	
+	<button name="buscar" ng-click="buscarCards()">Buscar</button>
