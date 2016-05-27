@@ -30,9 +30,7 @@ public class ListarFeature {
 	
 	@After("@listar")
 	public void after(){
-		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '11111';");
 		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '22222';");
-
 	}
 	
 	
@@ -78,7 +76,49 @@ public class ListarFeature {
 			} catch (Exception e) { 
 				//exception handling } 
 		}
+		webDriver.close();
 		
+	}
+	
+	@Then("^Debe eliminar la tarjeta \"([^\"]*)\" y aceptar el mensaje \"([^\"]*)\"$")
+	public void debe_eliminar_la_tarjeta_y_aceptar_el_mensaje(String tarjeta, String mensaje) throws Throwable {
+		//11111
+		
+		List<WebElement> cedulaElement = webDriver.findElements(By.name("card"));
+		List<WebElement> eliminarElement = webDriver.findElements(By.name("eliminar"));
+
+		int index = 0;
+		for (WebElement webElement : cedulaElement) {
+			if(webElement.getText().contains(tarjeta)){
+				eliminarElement.get(index).click();
+				try { 
+					WebDriverWait wait = new WebDriverWait(webDriver, 2000);
+					wait.until(ExpectedConditions.alertIsPresent()); 
+					Alert alert = webDriver.switchTo().alert(); 
+					Assert.assertEquals(mensaje, alert.getText());
+					alert.accept();
+					} catch (Exception e) { 
+						//exception handling } 
+				}
+				
+				break;
+			}
+			index++;
+		}
+		
+	}
+	
+	@Then("^Debe aparecer una alerta especificando mensaje exitoso \"([^\"]*)\"$")
+	public void debe_aparecer_una_alerta_especificando_mensaje_exitoso(String mensaje) throws Throwable {
+		try { 
+			WebDriverWait wait = new WebDriverWait(webDriver, 2000);
+			wait.until(ExpectedConditions.alertIsPresent()); 
+			Alert alert = webDriver.switchTo().alert(); 
+			Assert.assertEquals(mensaje, alert.getText());
+			alert.accept();
+			} catch (Exception e) { 
+				//exception handling } 
+		}
 		webDriver.close();
 	}
 
