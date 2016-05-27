@@ -78,16 +78,7 @@ public class CardBeanTest {
 	
 	@Test
 	public void debeCrearUnaTarjeta(){
-		//arrange
-		Card card = new Card();
-		card.setBonus(0);
-		card.setCedula("1115069076");
-		card.setLabel("tarjeta visa express");
-		card.setStatus(0);
-		card.setMount(2);
 		
-		//act
-		cardBean.create(card);
 	}
 	
 }

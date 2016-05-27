@@ -40,12 +40,6 @@ public class CardBean {
 	}
 
 
-	public void create(Card card) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 	
 	
 
