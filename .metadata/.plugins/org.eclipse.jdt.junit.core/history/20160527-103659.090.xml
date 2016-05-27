@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CardBeanTest" project="CreditCardEJB" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.0">
+    <testcase name="debeFiltrarLasTarjetasPorLaCedulaYRetornarlas" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.0"/>
+    <testcase name="debeAgregarLaBonificacionesDe2Millones" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.0"/>
+    <testcase name="debeCrearUnaTarjeta" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.0"/>
+  </testsuite>
+</testrun>

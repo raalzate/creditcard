@@ -91,7 +91,6 @@ public class CardBeanTest {
 		
 		Mockito.verify(entityManager).persist(card);
 		Mockito.verify(entityManager.getTransaction()).commit();
-		
 		Assert.assertTrue(hasSaved);
 	}
 	

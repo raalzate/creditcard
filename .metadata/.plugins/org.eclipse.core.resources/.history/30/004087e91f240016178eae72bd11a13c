@@ -87,12 +87,7 @@ public class CardBeanTest {
 		card.setMount(2);
 		
 		//act
-		boolean hasSaved = cardBean.create(card);
-		
-		Mockito.verify(entityManager).persist(card);
-		Mockito.verify(entityManager.getTransaction()).commit();
-		
-		Assert.assertTrue(hasSaved);
+		cardBean.create(card);
 	}
 	
 }

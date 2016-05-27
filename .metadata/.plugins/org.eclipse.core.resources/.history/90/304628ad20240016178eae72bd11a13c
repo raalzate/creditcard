@@ -42,7 +42,6 @@ public class CardBean {
 
 	public boolean create(Card card) {
 		entityManager.persist(card);
-		entityManager.getTransaction().commit();
 		return true;
 	}
 
