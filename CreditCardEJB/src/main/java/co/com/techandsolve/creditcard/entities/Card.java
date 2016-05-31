@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
     @NamedQuery(name="Card.findAll",
                 query="SELECT p FROM Card p WHERE p.cedula = :cedula"),
     @NamedQuery(name="Card.updateBonus",
-                query="UPDATE Card SET bonus = :bonus WHERE p.cedula = :cedula And mount > 1000000"),
+                query="UPDATE Card p SET bonus = :bonus WHERE p.cedula = :cedula And mount > 1000000"),
 }) 
 public class Card {
 	

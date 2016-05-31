@@ -1,6 +1,0 @@
-var module = angular.module("creditcard");
-
-
-module.controller("listController", function($scope, listService){
-	$scope.test = "hola mundo";
-});
