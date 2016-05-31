@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CardServiceTest" project="CreditCardWeb" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="co.com.techandsolve.services.CardServiceTest" time="0.0">
-    <testcase name="debeListarLasTarjetas" classname="co.com.techandsolve.services.CardServiceTest" time="0.0"/>
-    <testcase name="debeCrearTarjeta" classname="co.com.techandsolve.services.CardServiceTest" time="0.0"/>
-  </testsuite>
-</testrun>

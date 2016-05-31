@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import co.com.techandsolve.creditcard.business.CardBusinnes;
 import co.com.techandsolve.creditcard.entities.Card;
+import co.com.techandsolve.creditcard.exception.LockedException;
 
 @Path("creditcard")
 public class CardService {
@@ -25,7 +26,7 @@ public class CardService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("cards/{cedula}")
-	public List<Card> cardList(@PathParam("cedula") String cedula) throws Exception{
+	public List<Card> cardList(@PathParam("cedula") String cedula) throws LockedException{
 		return cardBusinnes.addBonusAndValidateUser(cedula);
 	}
 
