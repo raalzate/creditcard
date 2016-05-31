@@ -1,6 +1,7 @@
 package co.com.techandsolve.testatdd;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
@@ -32,12 +33,14 @@ public class ListarFeature {
 	public void after(){
 		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '22222';");
 		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '11111';");
+		webDriver.close();
 	}
 	
 	
 	@Given("^Dado que el usuario ingresa a la aplicacion$")
 	public void dado_que_el_usuario_ingresa_a_la_aplicacion() throws Throwable {
 		webDriver = new FirefoxDriver();
+		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.get("http://localhost:8080/CreditCardWeb/");
 	}
 
@@ -62,7 +65,6 @@ public class ListarFeature {
 		}
 		
 		Assert.assertTrue(estaEnLaLista);
-		webDriver.close();
 		
 	}
 	
@@ -77,13 +79,11 @@ public class ListarFeature {
 			} catch (Exception e) { 
 					
 			}
-		webDriver.close();
 		
 	}
 	
 	@Then("^Debe eliminar la tarjeta \"([^\"]*)\" y aceptar el mensaje \"([^\"]*)\"$")
 	public void debe_eliminar_la_tarjeta_y_aceptar_el_mensaje(String tarjeta, String mensaje) throws Throwable {
-		//11111
 		
 		List<WebElement> cedulaElement = webDriver.findElements(By.name("card"));
 		List<WebElement> eliminarElement = webDriver.findElements(By.name("eliminar"));
@@ -106,7 +106,7 @@ public class ListarFeature {
 			}
 			index++;
 		}
-		webDriver.close();
+		
 		
 	}
 	
@@ -121,7 +121,7 @@ public class ListarFeature {
 			} catch (Exception e) { 
 				
 			}
-		webDriver.close();
+		
 	}
 
 	

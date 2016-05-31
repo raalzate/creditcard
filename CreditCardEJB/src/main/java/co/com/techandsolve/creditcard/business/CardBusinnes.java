@@ -79,15 +79,14 @@ public class CardBusinnes {
 
 
 
-	public boolean createCard(Card card) {
-		return cardBean.create(card);
+	public void createCard(Card card) {
+		 cardBean.create(card);
 	}
 
 
 
-	public boolean deleteCard(Card card) {
-		return cardBean.delete(card);
-		
+	public void deleteCard(int id) {
+		 cardBean.delete(id);
 	}
 	
 	

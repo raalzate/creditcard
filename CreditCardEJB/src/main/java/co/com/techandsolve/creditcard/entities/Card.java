@@ -3,11 +3,19 @@ package co.com.techandsolve.creditcard.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="card")
+@NamedQueries({
+    @NamedQuery(name="Card.findAll",
+                query="SELECT p FROM Card p WHERE p.cedula = :cedula"),
+    @NamedQuery(name="Card.updateBonus",
+                query="UPDATE Card SET bonus = :bonus WHERE p.cedula = :cedula And mount > 1000000"),
+}) 
 public class Card {
 	
 	@Id

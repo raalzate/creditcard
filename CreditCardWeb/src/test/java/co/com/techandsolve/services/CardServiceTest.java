@@ -59,29 +59,23 @@ public class CardServiceTest {
 		card.setMount(58000000);
 		card.setCedula("1115069076");
 
-		Mockito.when(cardBusinnes.createCard(card)).thenReturn(true);
 		// act
 
-		boolean isNew = cardService.cardSave(card);
+		cardService.cardSave(card);
 		// assert
 
 		Mockito.verify(cardBusinnes).createCard(card);
-		Assert.assertTrue(isNew);
 	}
 
 	@Test
 	public void debeEliminarTarjeta() {
 		// arrange
-		Card card = new Card();
-		card.setId(1);
-
-		Mockito.when(cardBusinnes.deleteCard(card)).thenReturn(true);
+		int id = 1;
 
 		// act
-		boolean isDeleted = cardService.cardDelete(card);
+		cardService.cardDelete(id);
 
 		// assert
-		Mockito.verify(cardBusinnes).deleteCard(card);
-		Assert.assertTrue(isDeleted);
+		Mockito.verify(cardBusinnes).deleteCard(id);
 	}
 }

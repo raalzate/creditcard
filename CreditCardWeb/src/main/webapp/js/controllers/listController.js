@@ -46,11 +46,11 @@ module.controller("listController", function($scope, cardService, $location) {
 			$scope.result = "Cargando...";
 			var cardDelete = cardService.deleteCard(id);
 			cardDelete.success(function(data){
-				if(data) {
-					$scope.result = "";
-					alert("Se elimino la tarjeta");
-					document.getElementById('tr-'+id).remove();
-				}
+				
+				$scope.result = "";
+				alert("Se elimino la tarjeta");
+				document.getElementById('tr-'+id).remove();
+				
 			}).error(function(data, status, headers, config){
 				alert(headers("internalServerError"));
 				$scope.result = "Error de la consulta";

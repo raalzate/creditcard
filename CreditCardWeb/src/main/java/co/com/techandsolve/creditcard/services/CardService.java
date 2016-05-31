@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -28,7 +29,7 @@ public class CardService {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("cards/{cedula}")
+	@Path("list/{cedula}")
 	public List<Card> cardList(@PathParam("cedula") String cedula) throws LockedException{
 		return cardBusinnes.addBonusAndValidateUser(cedula);
 	}
@@ -37,18 +38,16 @@ public class CardService {
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("card")
+	@Path("save")
 	@ValidateRequest
-	public boolean cardSave(@Valid Card card) {
-		return cardBusinnes.createCard(card);
+	public void cardSave(@Valid Card card) {
+		 cardBusinnes.createCard(card);
 	}
 
 
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("card")
-	public boolean cardDelete(Card card) {
-		return cardBusinnes.deleteCard(card);
+	@DELETE
+	@Path("delete/{id}")
+	public void cardDelete(@PathParam("id") int id) {
+		 cardBusinnes.deleteCard(id);
 	}
 }

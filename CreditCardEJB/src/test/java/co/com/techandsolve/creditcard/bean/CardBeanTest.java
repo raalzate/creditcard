@@ -10,7 +10,9 @@ import javax.persistence.TypedQuery;
 
 
 
+
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -31,20 +33,27 @@ public class CardBeanTest {
 	
 	@InjectMocks
 	CardBean cardBean;
+
+	private ArrayList<Card> expected;
+	private Card card;
 	
 	public static final String CEDULA ="1234";
 	
+	@Before
+	public void setUp(){
+		 expected = new  ArrayList<Card>();
+		 card = new Card();
+	}
 	
 	@Test
 	public void debeFiltrarLasTarjetasPorLaCedulaYRetornarlas(){
 		
 		//arrange
-		List<Card> expected = new  ArrayList<Card>();
 		expected.add(new Card()); 
 		expected.add(new Card()); 
 		
 		Mockito.when(entityManager
-				.createQuery("Select p From Card p Where p.cedula = :cedula", Card.class))
+				.createNamedQuery("Card.findAll", Card.class))
 				.thenReturn(query);
 		
 		Mockito.when(query.getResultList()).thenReturn(expected);
@@ -62,12 +71,11 @@ public class CardBeanTest {
 	@Test
 	public void debeAgregarLaBonificacionesDe2Millones(){
 		//arrange
-		List<Card> expected = new  ArrayList<Card>();
 		expected.add(new Card()); 
 		expected.add(new Card()); 
 		
 		Mockito.when(entityManager
-				.createQuery("Update Card set bonus = :bonus Where p.cedula = :cedula And mount > 1000000", Card.class))
+				.createNamedQuery("Card.updateBonus", Card.class))
 				.thenReturn(query);
 		Mockito.when(query.getResultList()).thenReturn(expected);
 		
@@ -79,7 +87,6 @@ public class CardBeanTest {
 	@Test
 	public void debeCrearUnaTarjeta(){
 		//arrange
-		Card card = new Card();
 		card.setBonus(0);
 		card.setCedula("1115069076");
 		card.setLabel("tarjeta visa express");
@@ -88,31 +95,29 @@ public class CardBeanTest {
 		card.setDateCut("YYYY/mm/dd");
 		
 		//act
-		boolean hasSaved = cardBean.create(card);
+		cardBean.create(card);
 		
 		//assert
 		Mockito.verify(entityManager).persist(card);
 		
-		Assert.assertTrue(hasSaved);
 	}
 	
 	@Test
 	public void debeEliminarLaTarjeta_id1(){
 		//arrange
-		Card card = new Card();
-		card.setId(1);
+		int id = 1;
 		
 		Mockito.when(entityManager
 				.find(Card.class, card.getId()))
 				.thenReturn(card);
 		
 		//act
-		boolean hasDeleted = cardBean.delete(card);
+		cardBean.delete(id);
 		
 		//assert
-		Mockito.verify(entityManager).find(Card.class, card.getId());
+		Card card = Mockito.verify(entityManager)
+				.find(Card.class, id);
 		Mockito.verify(entityManager).remove(card);
-		Assert.assertTrue(hasDeleted);
 
 		
 	}

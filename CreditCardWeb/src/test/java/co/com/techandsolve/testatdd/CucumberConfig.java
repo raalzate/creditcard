@@ -11,8 +11,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(strict = true, 
 				features = { "src/test/resources/cucumber/", },
-				glue={"co.com.techandsolve.testatdd"}, 
-				tags={"@listar"})
+				glue={"co.com.techandsolve.testatdd"})
 public class CucumberConfig {
 
 }

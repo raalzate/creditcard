@@ -19,7 +19,7 @@ public class CardBean {
 	public List<Card> getCardByCC(String cedulaCliente) {
 		
 		TypedQuery<Card> query= entityManager
-				.createQuery("Select p From Card p Where p.cedula = :cedula", Card.class);
+				.createNamedQuery("Card.findAll", Card.class);
 		
 	    query.setParameter("cedula", cedulaCliente);
 	   
@@ -30,7 +30,7 @@ public class CardBean {
 
 	public List<Card> addBonus(String cedula, double bonus) {
 		TypedQuery<Card> query= entityManager
-				.createQuery("Update Card set bonus = :bonus Where p.cedula = :cedula And mount > 1000000", Card.class);
+				.createNamedQuery("Card.updateBonus", Card.class);
 		
 	    query.setParameter("cedula", cedula);
 	    query.setParameter("bonus", bonus);
@@ -39,16 +39,14 @@ public class CardBean {
 	}
 
 
-	public boolean create(Card card) {
+	public void create(Card card) {
 		entityManager.persist(card);
-		return true;
 	}
 
 
-	public boolean delete(Card card) {
-		Card retrieveCard = entityManager.find(Card.class, card.getId());
+	public void delete(int id) {
+		Card retrieveCard = entityManager.find(Card.class, id);
 		entityManager.remove(retrieveCard);
-		return true;
 	}
 
 }

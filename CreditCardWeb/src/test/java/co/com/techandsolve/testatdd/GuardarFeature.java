@@ -1,5 +1,7 @@
 package co.com.techandsolve.testatdd;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -20,17 +22,19 @@ public class GuardarFeature {
 	
 	@Before("@guardar")
 	public void setup(){
-		
+		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '1115069076';");
 	}
 	
 	@After("@guardar")
 	public void after(){
 		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '1115069076';");
+		webDriver.close();
 	}
 	
 	@Given("^Dado que el usuario ingresa a la aplicacion para guardar una tarjeta$")
 	public void dado_que_el_usuario_ingresa_a_la_aplicacion_para_guardar_una_tarjeta() throws Throwable {
 		webDriver = new FirefoxDriver();
+		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.get("http://localhost:8080/CreditCardWeb/");
 	}
 	
@@ -71,7 +75,7 @@ public class GuardarFeature {
 				//exception handling } 
 		}
 		
-		webDriver.close();
+		
 	}
 
 }
