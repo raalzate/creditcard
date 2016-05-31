@@ -75,8 +75,8 @@ public class ListarFeature {
 			Assert.assertEquals(mensaje, alert.getText());
 			alert.accept();
 			} catch (Exception e) { 
-				//exception handling } 
-		}
+					
+			}
 		webDriver.close();
 		
 	}
@@ -99,8 +99,8 @@ public class ListarFeature {
 					Assert.assertEquals(mensaje, alert.getText());
 					alert.accept();
 					} catch (Exception e) { 
-						//exception handling } 
-				}
+						
+					}
 				
 				break;
 			}
@@ -119,8 +119,8 @@ public class ListarFeature {
 			Assert.assertEquals(mensaje, alert.getText());
 			alert.accept();
 			} catch (Exception e) { 
-				//exception handling } 
-		}
+				
+			}
 		webDriver.close();
 	}
 

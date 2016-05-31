@@ -3,6 +3,7 @@ package co.com.techandsolve.creditcard.services;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,6 +12,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import org.jboss.resteasy.spi.validation.ValidateRequest;
 
 import co.com.techandsolve.creditcard.business.CardBusinnes;
 import co.com.techandsolve.creditcard.entities.Card;
@@ -35,7 +38,8 @@ public class CardService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("card")
-	public boolean cardSave(Card card) {
+	@ValidateRequest
+	public boolean cardSave(@Valid Card card) {
 		return cardBusinnes.createCard(card);
 	}
 

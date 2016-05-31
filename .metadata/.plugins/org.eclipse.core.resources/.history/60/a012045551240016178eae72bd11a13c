@@ -1,0 +1,20 @@
+package co.com.techandsolve.testatdd;
+
+import org.openqa.selenium.WebDriver;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
+public class GuardarFeature {
+	WebDriver webDriver;
+	
+	@Before("@guardar")
+	public void setup(){
+
+	}
+	
+	@After("@guardar")
+	public void after(){
+
+	}
+}

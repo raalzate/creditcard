@@ -3,15 +3,16 @@
 	<input type="text" name="cedula" ng-model="cedula">
 
 	<button name="buscar" ng-click="buscarCards()">Buscar</button>
-
-	<table border="1">
+	<button name="new" ng-click="nuevoCard()">Nuevo</button>
+	<span>{{result}}</span>
+	<table frame="border" style="border:solid 1px;margin:10px 0 10px 0">
 		<thead>
 			<tr>
 				<th>Label</th>
 				<th>Moto</th>
-				<th>Cedula</th>
+				<th>Cédula</th>
 				<th>Bono</th>
-				<th>Fecha de corte</th>
+				<th>Fecha de Corte</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -21,12 +22,11 @@
 				<td>{{card.mount | currency:"$"}}</td>
 				<td>{{card.cedula}}</td>
 				<td>{{card.bonus | currency:"$"}}</td>
-				<td>{{card.dateCut}}</td>
+				<td>{{card.dateCut | limitTo : 10 : 0}}</td>
 				<td><button name="eliminar" ng-click="eliminarCard(card.id)">Eliminar</button></td>
 			</tr>
 		</tbody>
 	</table>
 
-	<button name="new" ng-click="nuevoCard()">Nuevo</button>
 
 </div>

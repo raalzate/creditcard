@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -22,7 +21,6 @@ public class Card {
 	
 	@Column(name="amount")
 	@NotNull(message="monto requerida")
-	@Digits(integer=6, fraction=2)
 	private double mount;
 	
 	private double bonus;

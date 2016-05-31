@@ -13,6 +13,8 @@ dependencies {
 	providedCompile project(':CreditCardEJB')
 	providedCompile 'org.jboss.spec:jboss-javaee-6.0:3.0.3.Final'
 	
+	providedCompile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '2.3.2.Final'
+	
 	testCompile 'mysql:mysql-connector-java:5.1.34'
 	testCompile 'junit:junit:4.11'
 	testCompile 'org.mockito:mockito-all:1.9.5'
