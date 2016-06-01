@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;CreditCardEAR/buildEAR.gradle&apos; to &apos;build.gradle&apos;" description="Rename resource &apos;buildEAR.gradle&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="buildEAR.gradle" name="build.gradle" stamp="1464207703749" updateReferences="true"/>
-</session>

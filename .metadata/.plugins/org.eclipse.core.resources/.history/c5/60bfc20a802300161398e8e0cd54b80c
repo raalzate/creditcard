@@ -1,8 +1,0 @@
-<html ng-app="creditcard">
-<head>
-<script type="text/javascript" src="js/ext/angular.min.js"></script>
-</head>
-<body >
-
-</body>
-</html>

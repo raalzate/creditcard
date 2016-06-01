@@ -1,9 +1,0 @@
-<html ng-app="creditcard">
-<head>
-<script type="text/javascript" src="js/ext/angular.min.js"></script>
-<script type="text/javascript" src="js/controllers/cardController.js"></script>
-</head>
-<body ng-controller="listController">
-
-</body>
-</html>

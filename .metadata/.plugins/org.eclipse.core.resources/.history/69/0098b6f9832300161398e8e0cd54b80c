@@ -1,4 +1,0 @@
-angular.module("creditcard",["ngRoute"]).
-config(function($routeProvider){
-	
-});

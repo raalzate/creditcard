@@ -1,8 +1,0 @@
-package co.com.techandsolve.creditcard.provider;
-
-import javax.ws.rs.ext.Provider;
-
-@Provider
-public class LockedExceptionProvider {
-
-}

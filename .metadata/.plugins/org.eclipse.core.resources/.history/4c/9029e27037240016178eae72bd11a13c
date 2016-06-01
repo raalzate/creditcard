@@ -1,8 +1,0 @@
-<h2>GUARDAR CARDS</h2>
-<div ng-controller="saveController">
-	<input type="text" name="cedula" placehoder="Cedula" ng-model="cedula"> <br />
-	<input type="text" name="label" placehoder="Label" ng-model="cedula"> <br />
-	<input type="text" name="mount" placehoder="Monto" ng-model="cedula"> <br />
-	
-	<button name="buscar" ng-click="buscarCards()">Buscar</button>
-</div>
