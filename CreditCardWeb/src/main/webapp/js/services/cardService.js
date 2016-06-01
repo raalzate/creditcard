@@ -6,8 +6,17 @@ module.service("cardService", function($http){
 		return $http.get("/CreditCardWeb/rest/creditcard/list/"+cedula);
 	};
 	
-	this.saveCard = function(cedula, label, mount,dateCut){
-		var card = {"cedula":cedula, "label":label, "mount":mount, "dateCut":dateCut, "bonus":0, "status":0};
+	this.saveCard = function(client, label, mount,dateCut){
+		
+		var card = {
+				"client":client, 
+				"label":label, 
+				"mount":mount, 
+				"dateCut":dateCut, 
+				"bonus":0, 
+				"status":0
+		};
+		
 		return $http.put("/CreditCardWeb/rest/creditcard/save", card);
 	};
 	

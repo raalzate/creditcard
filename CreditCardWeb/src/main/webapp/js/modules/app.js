@@ -1,4 +1,5 @@
-angular.module("creditcard",["ngRoute"]).
+var creditcardApp = angular.module("creditcard",["ngRoute"]).
+
 config(function($routeProvider){
 	$routeProvider.when("/", {
 		controller:'listController',
@@ -10,3 +11,5 @@ config(function($routeProvider){
 	})
 	.otherwise({redirectTo:'/'});
 });
+
+

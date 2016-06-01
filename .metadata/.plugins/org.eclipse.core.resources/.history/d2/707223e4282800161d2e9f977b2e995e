@@ -1,0 +1,35 @@
+var module = angular.module("creditcard");
+
+
+module.controller("saveController", function($scope, cardService, clientFactory, $location){	
+	
+	
+	
+	this.setup = function(){
+		$scope.cedula = clientFactory.client.cedula;
+		$scope.nameClient =  clientFactory.client.name;
+	};
+	
+	this.validClient = function(){
+		return clientFactory.client?true:false;
+	};
+	
+	$scope.guardarCard = function(){
+		
+		var dateCut = moment($scope.dateCut).format("YYYY-MM-DD");
+
+		var saveCard = cardService.saveCard(
+				clientFactory.client, $scope.label, $scope.mount, dateCut);
+
+		saveCard.success(function(data){
+			alert("Se creo la tarjeta correctamente!.");
+			$location.url("/");
+		}).error(function(data, status, headers, config){
+			alert("Error al guardar");
+		});
+	};
+	
+	$scope.regresar = function(){
+		$location.url("/");
+	};
+});

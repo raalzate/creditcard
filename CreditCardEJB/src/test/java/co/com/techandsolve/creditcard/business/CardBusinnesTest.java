@@ -16,6 +16,7 @@ import com.googlecode.catchexception.CatchException;
 
 import co.com.techandsolve.creditcard.bean.CardBean;
 import co.com.techandsolve.creditcard.entities.Card;
+import co.com.techandsolve.creditcard.entities.Client;
 import co.com.techandsolve.creditcard.exception.LockedException;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -133,7 +134,7 @@ public class CardBusinnesTest {
 	public void cuandoSeCreaUnaTarjeta(){
 		//arrange
 		card1.setLabel("Tarjeta Visa Express");
-		card1.setCedula("1115069076");
+		card1.setClient(new Client());
 		card1.setMount(5000000);
 		card1.setBonus(0);
 				

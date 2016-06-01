@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CreditCardWeb" project="CreditCardWeb" tests="17" started="17" failures="0" errors="2" ignored="2">
+  <testsuite name="co.com.techandsolve.testatdd.CucumberConfig" time="44.877">
+    <testsuite name="Feature: Guardar tarjeta" time="30.186">
+      <testsuite name="Scenario: guardar una tarjeta" time="30.168" incomplete="true">
+        <error>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 30.10 seconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'raulalzate-ThinkPad-Edge-E440', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-22-generic', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d9fc5b63-236e-4502-be1e-f4b62c825eae
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at co.com.techandsolve.testatdd.GuardarFeature.el_usuario_da_click_en_el_boton_nuevo(GuardarFeature.java:47)
+	at ✽.When El usuario da click en el boton nuevo(guardarCard.feature:6)
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'raulalzate-ThinkPad-Edge-E440', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-22-generic', java.version: '1.8.0_91'
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.fxdriver.preconditions.visible(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
+
+</error>
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion para guardar una tarjeta" classname="Scenario: guardar una tarjeta" time="30.166"/>
+        <testcase name="When El usuario da click en el boton nuevo" classname="Scenario: guardar una tarjeta" time="0.002">
+          <error>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 30.10 seconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'raulalzate-ThinkPad-Edge-E440', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-22-generic', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d9fc5b63-236e-4502-be1e-f4b62c825eae
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at co.com.techandsolve.testatdd.GuardarFeature.el_usuario_da_click_en_el_boton_nuevo(GuardarFeature.java:47)
+	at ✽.When El usuario da click en el boton nuevo(guardarCard.feature:6)
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'raulalzate-ThinkPad-Edge-E440', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-22-generic', java.version: '1.8.0_91'
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.fxdriver.preconditions.visible(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///tmp/anonymous3853315275114738308webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
+
+</error>
+        </testcase>
+        <testcase name="Then debe registrar la tarjeta con el nombre &quot;Tarjeta Master Card&quot; con la cedula &quot;1115069076&quot;, el monto de 500000 y en la fecha 2016-10-10" classname="Scenario: guardar una tarjeta" time="0.0" ignored="true"/>
+        <testcase name="Then debe visualizar una dialog con el mensaje &quot;Se creo la tarjeta correctamente!.&quot;" classname="Scenario: guardar una tarjeta" time="0.016" ignored="true"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature: listar tarjetas" time="10.458">
+      <testsuite name="Scenario: listar por cedula" time="0.525">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: listar por cedula" time="0.294"/>
+        <testcase name="When El usuario busque con la cedula 11111" classname="Scenario: listar por cedula" time="0.07"/>
+        <testcase name="Then debe aparcer el usuario 11111" classname="Scenario: listar por cedula" time="0.16"/>
+      </testsuite>
+      <testsuite name="Scenario: tarjetas bloqueadas" time="0.515">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: tarjetas bloqueadas" time="0.217"/>
+        <testcase name="When El usuario busque con la cedula 22222" classname="Scenario: tarjetas bloqueadas" time="0.126"/>
+        <testcase name="Then Debe aparecer una alerta especificando el error &quot;locked card&quot;" classname="Scenario: tarjetas bloqueadas" time="0.172"/>
+      </testsuite>
+      <testsuite name="Scenario: eliminar una tarjeta" time="0.979">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: eliminar una tarjeta" time="0.234"/>
+        <testcase name="When El usuario busque con la cedula 11111" classname="Scenario: eliminar una tarjeta" time="0.253"/>
+        <testcase name="Then Debe eliminar la tarjeta &quot;Tarjeta Test&quot; y aceptar el mensaje &quot;Desea eliminar la tarjeta?&quot;" classname="Scenario: eliminar una tarjeta" time="0.175"/>
+        <testcase name="Then Debe aparecer una alerta especificando mensaje exitoso &quot;Se elimino la tarjeta&quot;" classname="Scenario: eliminar una tarjeta" time="0.317"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.services.CardServiceTest" time="0.02">
+    <testcase name="debeListarLasTarjetas" classname="co.com.techandsolve.services.CardServiceTest" time="0.017"/>
+    <testcase name="debeEliminarTarjeta" classname="co.com.techandsolve.services.CardServiceTest" time="0.002"/>
+    <testcase name="debeCrearTarjeta" classname="co.com.techandsolve.services.CardServiceTest" time="0.001"/>
+  </testsuite>
+</testrun>

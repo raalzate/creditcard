@@ -1,65 +1,115 @@
 var module = angular.module("creditcard");
 
-module.controller("listController", function($scope, cardService, $location) {
 
-	hiddenTable();
+module.controller("listController", function($scope, cardService, clientFactory, $location) {
+
+	setup(); //start
+	
+	function setup(){
+		if(validClient()) {
+			$scope.cedula = clientFactory.client.cedula;
+			searchCards($scope.cedula);
+		} else {
+			hiddenTable();
+			hiddenButtonNew();
+		} 
+	}
 	
     function hiddenTable(){
-		document.getElementsByTagName("table")[0]
+		document.getElementById("cardsTable")
 			.style.visibility = "hidden";
-	};
+	}
 	
 	function showTable(){
-		document.getElementsByTagName("table")[0]
+		document.getElementById("cardsTable")
 		.style.visibility = "visible";
-	};
+	}
 	
+    function hiddenButtonNew(){
+		document.getElementById("btnNew")
+			.style.visibility = "hidden";
+	}
 	
-	$scope.buscarCards = function() {
-		$scope.result = "Cargando...";
-		
-		var cards = cardService.getCards($scope.cedula);
+	function showButtonNew(){
+		document.getElementById("btnNew")
+		.style.visibility = "visible";
+	}
+	
+	function showMessage(message){
+		$scope.result = message;
+	}
+	
+	function removeRowTable(id){
+		document.getElementById('tr-'+id).remove();
+		//clientFactory.removeCard(id);
+	}
+	 
+	function updateClient(data){
+		firstClientOfList = data[0].client;
+		clientFactory.update(
+				firstClientOfList.id, 
+				firstClientOfList.name, 
+				firstClientOfList.cedula,
+				data
+		);
+	}
+	
+	function searchCards(cedula){
+		showMessage("Cargando...");
+		var cards = cardService.getCards(cedula);
+	
 		cards.success(function(data) {
 			
 			$scope.listCards = data;
 			
 			if (data.length > 0) {
-				$scope.result = "";	
+				updateClient(data);
+				showMessage("");	
 				showTable();
+				showButtonNew();
 			} else {
 				hiddenTable();
-				$scope.result = "No hay resultados";
-				document.getElementsByTagName("table")[0].style.visibility = "hidden";
-
+				hiddenButtonNew();
+				showMessage("No hay resultados");
 			}
 
 		}).error(function(data, status, headers, config) {
 			alert(headers("internalServerError"));
-			$scope.result = "Error de la consulta";
+			showMessage("Error de la consulta");
 			hiddenTable();
+			hiddenButtonNew()
 		});
-
+	}
+	
+	function validClient(){
+		return clientFactory.client.id?true:false;
+	}
+	
+	$scope.onClickSearch = function() {
+		searchCards($scope.cedula);
 	};
 
-	$scope.eliminarCard = function(id) {
+	$scope.onClickDelete = function(id) {
 		if(confirm("Desea eliminar la tarjeta?")) {
-			$scope.result = "Cargando...";
+			showMessage("Cargando...");
 			var cardDelete = cardService.deleteCard(id);
+			
 			cardDelete.success(function(data){
 				
-				$scope.result = "";
+				showMessage("");
 				alert("Se elimino la tarjeta");
-				document.getElementById('tr-'+id).remove();
+				removeRowTable(id);
+		
 				
 			}).error(function(data, status, headers, config){
 				alert(headers("internalServerError"));
-				$scope.result = "Error de la consulta";
+				showMessage("Error de la consulta");
 			});
 		}
 		
 	};
 
-	$scope.nuevoCard = function() {
+	$scope.onClickNew = function() {
 		$location.url("/save");
 	};
 });

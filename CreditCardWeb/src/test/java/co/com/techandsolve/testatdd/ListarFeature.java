@@ -24,15 +24,28 @@ public class ListarFeature {
 	
 	@Before("@listar")
 	public void setup(){
-		Utilidadesbd.ejecutarSentencia("INSERT INTO card (label, status, amount, cedula, bonus) values ('Tarjeta Test', 0, 1500000, '11111', 0);");
-		Utilidadesbd.ejecutarSentencia("INSERT INTO card (label, status, amount, cedula, bonus) values ('Tarjeta Test Bloq', 1, 1500000, '22222', 0);");
+		Utilidadesbd.ejecutarSentencia("DELETE FROM client WHERE id = 1;");
+		Utilidadesbd.ejecutarSentencia("DELETE FROM client WHERE id = 2;");
+		
+		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE client_id IN "
+				+ "(SELECT c.id FROM client c WHERE c.cedula IN ('11111', '22222'));");
+		
+		Utilidadesbd.ejecutarSentencia("INSERT INTO client (id, name, cedula) values (1,'Raul .A Alzate', '11111');");
+		Utilidadesbd.ejecutarSentencia("INSERT INTO client (id, name, cedula) values (2,'Angelica Maria', '22222');");
+
+		Utilidadesbd.ejecutarSentencia("INSERT INTO card (label, status, amount, bonus, client_id) values ('Tarjeta Test', 0, 1500000, 0, 1);");
+		Utilidadesbd.ejecutarSentencia("INSERT INTO card (label, status, amount, bonus, client_id) values ('Tarjeta Test Bloq', 1, 1500000, 0, 2);");
 
 	}
 	
 	@After("@listar")
 	public void after(){
-		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '22222';");
-		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE cedula = '11111';");
+		Utilidadesbd.ejecutarSentencia("DELETE FROM card WHERE client_id IN "
+				+ "(SELECT c.id FROM client c WHERE c.cedula IN ('11111', '22222'));");
+		
+		Utilidadesbd.ejecutarSentencia("DELETE FROM client WHERE id = 1;");
+		Utilidadesbd.ejecutarSentencia("DELETE FROM client WHERE id = 2;");
+		
 		webDriver.close();
 	}
 	
@@ -40,7 +53,7 @@ public class ListarFeature {
 	@Given("^Dado que el usuario ingresa a la aplicacion$")
 	public void dado_que_el_usuario_ingresa_a_la_aplicacion() throws Throwable {
 		webDriver = new FirefoxDriver();
-		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		webDriver.get("http://localhost:8080/CreditCardWeb/");
 	}
 
@@ -61,7 +74,6 @@ public class ListarFeature {
 		
 		for (WebElement webElement : cedulaElement) {
 			estaEnLaLista = webElement.getText().contains("11111");
-			
 		}
 		
 		Assert.assertTrue(estaEnLaLista);

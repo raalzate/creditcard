@@ -13,6 +13,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import co.com.techandsolve.creditcard.business.CardBusinnes;
 import co.com.techandsolve.creditcard.entities.Card;
+import co.com.techandsolve.creditcard.entities.Client;
 import co.com.techandsolve.creditcard.services.CardService;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -57,7 +58,7 @@ public class CardServiceTest {
 		card.setStatus(0);
 		card.setLabel("Tarjeta Visa Express");
 		card.setMount(58000000);
-		card.setCedula("1115069076");
+		card.setClient(new Client());
 
 		// act
 

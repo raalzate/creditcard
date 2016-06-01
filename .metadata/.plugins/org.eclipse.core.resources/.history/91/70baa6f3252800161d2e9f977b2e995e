@@ -1,0 +1,10 @@
+creditcardApp.factory('clientFactory', function(){
+	  return {
+		  client: {name: '',cedula: '',id: ''},
+		  update: function(id, name, cedula) {
+			  this.client.id = id;
+			  this.client.name = name;
+			  this.client.cedula = cedula;
+		  }
+	  };
+});

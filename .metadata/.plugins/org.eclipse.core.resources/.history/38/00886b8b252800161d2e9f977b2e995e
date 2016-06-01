@@ -1,0 +1,25 @@
+var creditcardApp = angular.module("creditcard",["ngRoute"]).
+
+config(function($routeProvider){
+	$routeProvider.when("/", {
+		controller:'listController',
+		templateUrl:'list.html'
+	})
+	.when("/save", {
+		controller:'saveController',
+		templateUrl:'save.html'
+	})
+	.otherwise({redirectTo:'/'});
+});
+
+
+creditcardApp.factory('client', function(){
+	  return {
+		  client: {name: '',cedula: '',id: ''},
+		  update: function(id, name, cedula) {
+			  this.client.id = id;
+			  this.client.name = name;
+			  this.client.cedula = cedula;
+		  }
+	  };
+});

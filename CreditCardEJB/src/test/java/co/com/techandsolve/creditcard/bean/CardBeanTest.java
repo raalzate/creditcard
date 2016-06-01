@@ -11,6 +11,7 @@ import javax.persistence.TypedQuery;
 
 
 
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,7 @@ import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import co.com.techandsolve.creditcard.entities.Card;
+import co.com.techandsolve.creditcard.entities.Client;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CardBeanTest {
@@ -88,7 +90,7 @@ public class CardBeanTest {
 	public void debeCrearUnaTarjeta(){
 		//arrange
 		card.setBonus(0);
-		card.setCedula("1115069076");
+		card.setClient(new Client());
 		card.setLabel("tarjeta visa express");
 		card.setStatus(0);
 		card.setMount(20000);

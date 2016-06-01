@@ -1,0 +1,20 @@
+package co.com.techandsolve.creditcard.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="card")
+public class Client {
+	@Id
+	private int id;
+	
+	@NotNull(message="nombre requerido")
+	private String name;
+	
+	@NotNull(message="cedula requerida")
+	private String cedula;
+	
+}
