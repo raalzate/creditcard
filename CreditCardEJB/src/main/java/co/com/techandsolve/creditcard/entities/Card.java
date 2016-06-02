@@ -4,11 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -34,6 +34,7 @@ public class Card {
 	
 	@Column(name="amount")
 	@NotNull(message="monto requerida")
+	@Min(message="el monto debe ser minimo 100", value=100)
 	private double mount;
 	
 	private double bonus;

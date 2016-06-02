@@ -29,7 +29,7 @@ module.controller("saveController", function($scope, cardService, clientFactory,
 			alert("Se creo la tarjeta correctamente!.");
 			$location.url("/");
 		}).error(function(data, status, headers, config){
-			alert("Error al guardar");
+			alert(headers("internalServerError"));
 		});
 	};
 	

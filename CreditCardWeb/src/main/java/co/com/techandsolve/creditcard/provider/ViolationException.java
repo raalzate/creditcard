@@ -1,8 +1,5 @@
 package co.com.techandsolve.creditcard.provider;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
@@ -18,19 +15,20 @@ public class ViolationException implements ExceptionMapper<MethodConstraintViola
 	public Response toResponse(MethodConstraintViolationException ex) {
 
 		
-		Map<String, String> errors = new HashMap<String, String>();
+		String message = "";
 		
         for (MethodConstraintViolation<?> methodConstraintViolation : ex.getConstraintViolations()) {
 
-            errors.put(methodConstraintViolation.getParameterName(),
-
-                    methodConstraintViolation.getMessage());
-
+        	message += methodConstraintViolation.getMessage() + ", ";
+ 
         }
 
-		
+        if(message.length() > 0){
+        	message = message.substring(0, message.length() - 2);
+        }
+        
 		return Response.serverError()
-				.header("internalServerError", errors)
+				.header("internalServerError", message)
 				.build();
 	}
 	
