@@ -30,9 +30,8 @@ public class CardBusinnesTest {
 	@InjectMocks
 	CardBusinnes cardBusiness;
 
-	Card card1;
-	
-	Card card2;
+	private Card card1;
+	private Card card2;
 	
 	@Before
 	public void setup(){
@@ -56,7 +55,7 @@ public class CardBusinnesTest {
 		Mockito.when(cardBean.getCardByCC(CEDULA)).thenReturn(expected);
 
 		// act
-		List<Card> lstResult = cardBusiness.addBonusAndValidateUser(CEDULA);
+		List<Card> lstResult = cardBusiness.getListAndAppenndBonus(CEDULA);
 
 		// assert
 		Assert.assertTrue(lstResult.get(0).getBonus() == 20000);
@@ -76,7 +75,7 @@ public class CardBusinnesTest {
 		Mockito.when(cardBean.getCardByCC(CEDULA)).thenReturn(expected);
 
 		// act
-		List<Card> lstResult = cardBusiness.addBonusAndValidateUser(CEDULA);
+		List<Card> lstResult = cardBusiness.getListAndAppenndBonus(CEDULA);
 		
 		// assert
 		Assert.assertTrue(lstResult.get(0).getBonus() == 10000);
@@ -96,7 +95,7 @@ public class CardBusinnesTest {
 		Mockito.when(cardBean.getCardByCC(CEDULA)).thenReturn(expected);
 
 		// act
-		List<Card> lstResult = cardBusiness.addBonusAndValidateUser(CEDULA);
+		List<Card> lstResult = cardBusiness.getListAndAppenndBonus(CEDULA);
 
 		// assert
 		Assert.assertTrue(lstResult.get(0).getBonus() == 10);
@@ -120,7 +119,7 @@ public class CardBusinnesTest {
 		Mockito.when(cardBean.getCardByCC(CEDULA)).thenReturn(expected);
 
 		// act
-		CatchException.catchException(cardBusiness).addBonusAndValidateUser(CEDULA);
+		CatchException.catchException(cardBusiness).getListAndAppenndBonus(CEDULA);
 		
 
 		//assert
@@ -149,7 +148,7 @@ public class CardBusinnesTest {
 	@Test
 	public void cuandoSeEliminaUnaTarjeta(){
 		//arrange
-		int id = 1;;
+		int id = 1;
 		
 		
 		//act

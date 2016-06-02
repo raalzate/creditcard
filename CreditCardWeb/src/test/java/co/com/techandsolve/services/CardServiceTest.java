@@ -37,7 +37,7 @@ public class CardServiceTest {
 		card1.setMount(1000000);
 		expected.add(card1);
 
-		Mockito.when(cardBusinnes.addBonusAndValidateUser(CEDULA)).thenReturn(
+		Mockito.when(cardBusinnes.getListAndAppenndBonus(CEDULA)).thenReturn(
 				expected);
 
 		// act
@@ -46,7 +46,7 @@ public class CardServiceTest {
 		// asserts
 
 		Assert.assertEquals(expected, resultList);
-		Mockito.verify(cardBusinnes).addBonusAndValidateUser(CEDULA);
+		Mockito.verify(cardBusinnes).getListAndAppenndBonus(CEDULA);
 	}
 
 	@Test
