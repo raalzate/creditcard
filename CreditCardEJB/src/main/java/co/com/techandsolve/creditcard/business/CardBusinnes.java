@@ -8,22 +8,6 @@ import co.com.techandsolve.creditcard.bean.CardBean;
 import co.com.techandsolve.creditcard.entities.Card;
 import co.com.techandsolve.creditcard.exception.LockedException;
 
-/*
- * Propiedades: Numero_tarjeta, Id_cliente, Bonificacion, Monto, Estado, Fecha-Corte
- * 
- * Las bonificaciones se manejan de la siguiente manera: 
- * 
- * Cuando tenga mas de 1 millon en el monto de las tarjetas añadir 20000 de 
- * bonificación para cada tarjeta
- * 
- * Cuando sea de 700 mill a 1 millon añadir 10000 de bonificación para cada tarjeta, 
- * 
- * Siempre que el cliente tenga bonificación en por lo menos una tarjeta no se puede añadir bonificación.
- * 
- * 
- * Cuando la tarjeta este bloqueada enviar un mensaje al usuario diciendo 
- * que tiene tarjeta bloqueada
- */
 public class CardBusinnes {
 
 	private static final double SUM_MOUNT_1MLL = 1000000;
@@ -36,7 +20,7 @@ public class CardBusinnes {
 	private CardBean cardBean;
 
 
-	public List<Card> addBonusAndValidateUser(String cedula) throws LockedException{
+	public List<Card> getListAndAppenndBonus(String cedula) throws LockedException{
 		List<Card> listCard = cardBean.getCardByCC(cedula);
 		
 		double sumMount = 0;

@@ -30,7 +30,7 @@ public class CardService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("list/{cedula}")
 	public List<Card> cardList(@PathParam("cedula") String cedula) throws LockedException{
-		return cardBusinnes.addBonusAndValidateUser(cedula);
+		return cardBusinnes.getListAndAppenndBonus(cedula);
 	}
 
 
