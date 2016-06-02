@@ -9,7 +9,7 @@ import org.hibernate.validator.method.MethodConstraintViolationException;
 
 @SuppressWarnings("deprecation")
 @Provider
-public class ViolationException implements ExceptionMapper<MethodConstraintViolationException> {
+public class ViolationExceptionProvider implements ExceptionMapper<MethodConstraintViolationException> {
 
 	@Override
 	public Response toResponse(MethodConstraintViolationException ex) {
@@ -19,7 +19,8 @@ public class ViolationException implements ExceptionMapper<MethodConstraintViola
 		
         for (MethodConstraintViolation<?> methodConstraintViolation : ex.getConstraintViolations()) {
 
-        	message += methodConstraintViolation.getMessage() + ", ";
+        	message += methodConstraintViolation.getMessage();
+        	message += ", ";
  
         }
 
