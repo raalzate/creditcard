@@ -15,7 +15,7 @@ public class ViolationExceptionProvider implements ExceptionMapper<MethodConstra
 	public Response toResponse(MethodConstraintViolationException ex) {
 
 		
-		StringBuffer buf = new StringBuffer();
+		StringBuilder buf = new StringBuilder();
 		
         for (MethodConstraintViolation<?> methodConstraintViolation : ex.getConstraintViolations()) {
         	buf.append(methodConstraintViolation.getMessage());
