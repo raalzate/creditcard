@@ -112,4 +112,8 @@ module.controller("listCardController", function($scope, cardService, clientFact
 	$scope.onClickNew = function() {
 		$location.url("/save");
 	};
+	
+	$scope.onClickNewBill = function(){
+		$location.url("/bill");
+	};
 });

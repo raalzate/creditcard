@@ -11,6 +11,7 @@ import javax.jms.Session;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -52,15 +53,18 @@ public class BillBusinessTest {
 		Mockito.when(session.createObjectMessage())
 		.thenReturn(objectMessage);
 		
+		
+		//create inOrder object passing any mocks that need to be verified in order
+		InOrder inOrder = Mockito.inOrder(queueConnectionFactory, connection,session,messageProducer,connection);
+		
 		billBusinnes.sendMessage(bill);
 		
-		Mockito.verify(queueConnectionFactory).createConnection();
-		Mockito.verify(connection).createSession(false, Session.AUTO_ACKNOWLEDGE);
-		Mockito.verify(session).createProducer(queue);
-		Mockito.verify(session).createObjectMessage();
-		Mockito.verify(messageProducer).send(objectMessage);
-		Mockito.verify(connection).close();;
-
+		inOrder.verify(queueConnectionFactory).createConnection();
+		inOrder.verify(connection).createSession(false, Session.AUTO_ACKNOWLEDGE);
+		inOrder.verify(session).createProducer(queue);
+		inOrder.verify(session).createObjectMessage();
+		inOrder.verify(messageProducer).send(objectMessage);
+		inOrder.verify(connection).close();;
 
 	}
 	

@@ -1,6 +1,7 @@
 package co.com.techandsolve.creditcard.mdb;
 
 import javax.ejb.ActivationConfigProperty;
+import javax.ejb.EJBException;
 import javax.ejb.MessageDriven;
 import javax.inject.Inject;
 import javax.jms.JMSException;
@@ -41,6 +42,7 @@ public class BillMDB implements MessageListener {
 			save(bill);
 		} catch (JMSException e) {
 			Logger.getLogger(this.getClass()).error(e);
+			throw new EJBException(e);
 		}
 
 	}
