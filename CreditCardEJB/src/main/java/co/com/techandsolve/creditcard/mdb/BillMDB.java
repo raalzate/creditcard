@@ -43,7 +43,7 @@ public class BillMDB implements MessageListener {
 
 	}
 	
-	public void save(Bill bill){
+	private void save(Bill bill){
 		billBean.create(bill);
 	}
 

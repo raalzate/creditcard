@@ -7,12 +7,10 @@ import javax.jms.ObjectMessage;
 import javax.jms.Queue;
 import javax.jms.QueueConnectionFactory;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
