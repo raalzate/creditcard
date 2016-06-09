@@ -8,6 +8,7 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
 
+import org.jboss.logging.Logger;
 
 import co.com.techandsolve.creditcard.bean.BillBean;
 import co.com.techandsolve.creditcard.entities.Bill;
@@ -39,7 +40,7 @@ public class BillMDB implements MessageListener {
 			Bill bill = (Bill) objectMessage.getObject();
 			save(bill);
 		} catch (JMSException e) {
-			System.err.println(e);
+			Logger.getLogger(this.getClass()).error(e);
 		}
 
 	}

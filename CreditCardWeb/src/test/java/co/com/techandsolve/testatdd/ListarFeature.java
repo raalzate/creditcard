@@ -53,7 +53,6 @@ public class ListarFeature {
 	@Given("^Dado que el usuario ingresa a la aplicacion$")
 	public void dado_que_el_usuario_ingresa_a_la_aplicacion() throws Throwable {
 		webDriver = new FirefoxDriver();
-		webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		webDriver.get("http://localhost:8080/CreditCardWeb/");
 	}
 

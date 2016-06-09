@@ -41,7 +41,6 @@ public class GuardarFeature {
 	@Given("^Dado que el usuario ingresa a la aplicacion para guardar una tarjeta$")
 	public void dado_que_el_usuario_ingresa_a_la_aplicacion_para_guardar_una_tarjeta() throws Throwable {
 		webDriver = new FirefoxDriver();
-		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.get("http://localhost:8080/CreditCardWeb/");
 	}
 	

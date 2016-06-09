@@ -12,6 +12,7 @@ dependencies {
 	compile 'org.jboss.spec:jboss-javaee-6.0:3.0.3.Final'
 	compile 'commons-beanutils:commons-beanutils:1.9.2'
 	compile 'com.squareup.retrofit:retrofit:1.9.0'
+	compile 'org.jboss.logging:jboss-logging:3.0.0.CR1'
 	
 	testCompile 'junit:junit:4.11'
 	testCompile 'org.mockito:mockito-all:1.9.5'
