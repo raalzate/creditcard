@@ -15,21 +15,15 @@ public class ViolationExceptionProvider implements ExceptionMapper<MethodConstra
 	public Response toResponse(MethodConstraintViolationException ex) {
 
 		
-		String message = "";
+		StringBuffer buf = new StringBuffer();
 		
         for (MethodConstraintViolation<?> methodConstraintViolation : ex.getConstraintViolations()) {
-
-        	message += methodConstraintViolation.getMessage();
-        	message += ", ";
- 
+        	buf.append(methodConstraintViolation.getMessage());
+        	buf.append(", ");
         }
 
-        if(message.length() > 0){
-        	message = message.substring(0, message.length() - 2);
-        }
-        
 		return Response.serverError()
-				.header("internalServerError", message)
+				.header("internalServerError", buf.toString())
 				.build();
 	}
 	

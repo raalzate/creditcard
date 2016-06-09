@@ -8,7 +8,6 @@ import javax.jms.ObjectMessage;
 import javax.jms.Queue;
 import javax.jms.QueueConnectionFactory;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 
 import co.com.techandsolve.creditcard.entities.Bill;
 

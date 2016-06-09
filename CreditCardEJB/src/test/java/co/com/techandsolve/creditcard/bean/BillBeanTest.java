@@ -1,6 +1,5 @@
 package co.com.techandsolve.creditcard.bean;
 
-import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 
