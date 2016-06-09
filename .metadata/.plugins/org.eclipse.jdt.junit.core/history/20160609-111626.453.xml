@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CreditCardEJB" project="CreditCardEJB" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.026">
+    <testcase name="cuandoEsMasDe_700M_AgregarBonificar_10M" classname="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.001"/>
+    <testcase name="cuandoTieneBonos_noAgregarBonificacion" classname="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.0"/>
+    <testcase name="cuandoEsMasDe_1Mll_AgregarBonificar_20M" classname="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.0"/>
+    <testcase name="cuandoEstaBloqueadaUnaTarjenta" classname="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.0"/>
+    <testcase name="cuandoSeCreaUnaTarjeta" classname="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.0"/>
+    <testcase name="cuandoSeEliminaUnaTarjeta" classname="co.com.techandsolve.creditcard.business.CardBusinnesTest" time="0.025"/>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.007">
+    <testcase name="debeFiltrarLasTarjetasPorLaCedulaYRetornarlas" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.002"/>
+    <testcase name="debeAgregarLaBonificacionesDe2Millones" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.002"/>
+    <testcase name="debeEliminarLaTarjeta_id1" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.002"/>
+    <testcase name="debeCrearUnaTarjeta" classname="co.com.techandsolve.creditcard.bean.CardBeanTest" time="0.001"/>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.creditcard.bean.BillBeanTest" time="0.06">
+    <testcase name="verificarPersistencia" classname="co.com.techandsolve.creditcard.bean.BillBeanTest" time="0.06"/>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.creditcard.business.BillBusinessTest" time="0.003">
+    <testcase name="debeEnviarUnMensaje" classname="co.com.techandsolve.creditcard.business.BillBusinessTest" time="0.003"/>
+  </testsuite>
+</testrun>

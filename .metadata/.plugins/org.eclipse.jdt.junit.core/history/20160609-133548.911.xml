@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CreditCardWeb" project="CreditCardWeb" tests="21" started="21" failures="0" errors="2" ignored="0">
+  <testsuite name="co.com.techandsolve.testatdd.CucumberConfig" time="22.986">
+    <testsuite name="Feature: Guardar factura" time="1.596">
+      <testsuite name="Scenario: guardar una factura" time="1.596" incomplete="true">
+        <error>java.lang.NullPointerException
+	at co.com.techandsolve.testatdd.GuardarFeature.after(GuardarFeature.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:211)
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</error>
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion para guardar una factura" classname="Scenario: guardar una factura" time="1.007"/>
+        <testcase name="When El usuario ingresa la factura con el nombre &quot;Factura de credito (test)&quot;, con la descripcion &quot;Valor a pagar&quot; y con el monto de 500000" classname="Scenario: guardar una factura" time="0.12"/>
+        <testcase name="Then el sistema visualiza un mensaje  con el nombre de &quot;Se encolo la factura!.&quot;" classname="Scenario: guardar una factura" time="0.47"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature: Guardar tarjeta" time="1.088">
+      <testsuite name="Scenario: guardar una tarjeta" time="1.088" incomplete="true">
+        <error>java.lang.NullPointerException
+	at co.com.techandsolve.testatdd.GuardarFacturaFeature.after(GuardarFacturaFeature.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:211)
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</error>
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion para guardar una tarjeta" classname="Scenario: guardar una tarjeta" time="0.358"/>
+        <testcase name="When El usuario busque con la cedula 11111 y da click en el boton nuevo" classname="Scenario: guardar una tarjeta" time="0.269"/>
+        <testcase name="Then debe registrar la tarjeta con el nombre &quot;Tarjeta Master Card&quot; con el monto de 500000 y en la fecha 2016-10-10" classname="Scenario: guardar una tarjeta" time="0.261"/>
+        <testcase name="Then debe visualizar una dialog con el mensaje &quot;Se creo la tarjeta correctamente!.&quot;" classname="Scenario: guardar una tarjeta" time="0.2"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature: listar tarjetas" time="11.276">
+      <testsuite name="Scenario: listar por cedula" time="0.493">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: listar por cedula" time="0.226"/>
+        <testcase name="When El usuario busque con la cedula 11111" classname="Scenario: listar por cedula" time="0.044"/>
+        <testcase name="Then debe aparcer el usuario 11111" classname="Scenario: listar por cedula" time="0.223"/>
+      </testsuite>
+      <testsuite name="Scenario: tarjetas bloqueadas" time="0.589">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: tarjetas bloqueadas" time="0.221"/>
+        <testcase name="When El usuario busque con la cedula 22222" classname="Scenario: tarjetas bloqueadas" time="0.067"/>
+        <testcase name="Then Debe aparecer una alerta especificando el error &quot;locked card&quot;" classname="Scenario: tarjetas bloqueadas" time="0.301"/>
+      </testsuite>
+      <testsuite name="Scenario: eliminar una tarjeta" time="1.079">
+        <testcase name="Given Dado que el usuario ingresa a la aplicacion" classname="Scenario: eliminar una tarjeta" time="0.279"/>
+        <testcase name="When El usuario busque con la cedula 11111" classname="Scenario: eliminar una tarjeta" time="0.341"/>
+        <testcase name="Then Debe eliminar la tarjeta &quot;Tarjeta Test&quot; y aceptar el mensaje &quot;Desea eliminar la tarjeta?&quot;" classname="Scenario: eliminar una tarjeta" time="0.099"/>
+        <testcase name="Then Debe aparecer una alerta especificando mensaje exitoso &quot;Se elimino la tarjeta&quot;" classname="Scenario: eliminar una tarjeta" time="0.36"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.services.CardServiceTest" time="0.085">
+    <testcase name="debeListarLasTarjetas" classname="co.com.techandsolve.services.CardServiceTest" time="0.042"/>
+    <testcase name="debeEliminarTarjeta" classname="co.com.techandsolve.services.CardServiceTest" time="0.002"/>
+    <testcase name="debeCrearTarjeta" classname="co.com.techandsolve.services.CardServiceTest" time="0.041"/>
+  </testsuite>
+  <testsuite name="co.com.techandsolve.services.BillServiceTest" time="0.036">
+    <testcase name="debeRetornarValid" classname="co.com.techandsolve.services.BillServiceTest" time="0.036"/>
+  </testsuite>
+</testrun>
