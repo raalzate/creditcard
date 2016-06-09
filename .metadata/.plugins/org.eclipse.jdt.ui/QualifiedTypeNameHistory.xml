@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.validation.constraints.Min"/>
+<fullyQualifiedTypeName name="co.com.techandsolve.creditcard.exception.ValidationException"/>
+<fullyQualifiedTypeName name="javax.jms.MessageListener"/>
+<fullyQualifiedTypeName name="co.com.techandsolve.creditcard.services.BillService"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="javax.annotation.Resource"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="javax.jms.QueueConnectionFactory"/>
+<fullyQualifiedTypeName name="javax.jms.Queue"/>
+<fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+<fullyQualifiedTypeName name="org.mockito.Mock"/>
+<fullyQualifiedTypeName name="javax.jms.Connection"/>
+<fullyQualifiedTypeName name="org.mockito.Mockito"/>
+<fullyQualifiedTypeName name="javax.jms.Session"/>
+<fullyQualifiedTypeName name="javax.jms.MessageProducer"/>
+<fullyQualifiedTypeName name="javax.jms.TextMessage"/>
+</qualifiedTypeNameHistroy>

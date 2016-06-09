@@ -1,0 +1,27 @@
+package co.com.techandsolve.creditcard.business;
+
+import javax.jms.Queue;
+import javax.jms.QueueConnectionFactory;
+
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+public class BillBusinness {
+	
+	@Mock
+	private QueueConnectionFactory queueConnectionFactory;
+	
+	@Mock 
+	private Queue queue;
+	
+	@InjectMocks
+	private BillBusinnes billBusinnes;
+	
+	@Test 
+	public void debeConectarse(){
+		
+	}
+	
+
+}

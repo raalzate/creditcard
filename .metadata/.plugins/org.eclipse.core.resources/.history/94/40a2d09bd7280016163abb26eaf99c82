@@ -1,0 +1,16 @@
+package co.com.techandsolve.creditcard.exception;
+
+import java.util.Set;
+
+import org.hibernate.validator.method.MethodConstraintViolation;
+import org.hibernate.validator.method.MethodConstraintViolationException;
+
+public class ValidationException extends MethodConstraintViolationException{
+
+	private static final long serialVersionUID = 1L;
+
+	@SuppressWarnings("deprecation")
+	public ValidationException(Set<? extends MethodConstraintViolation<?>> msn){
+		super(msn);
+	}
+}

@@ -1,0 +1,42 @@
+package co.com.techandsolve.creditcard.business;
+
+import javax.jms.Connection;
+import javax.jms.JMSException;
+import javax.jms.Queue;
+import javax.jms.QueueConnectionFactory;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+@RunWith(MockitoJUnitRunner.class)
+public class BillBusinness {
+	
+	@Mock
+	private QueueConnectionFactory queueConnectionFactory;
+	
+	@Mock 
+	private Queue queue;
+	
+	@Mock 
+	private Connection connection;
+	
+	@InjectMocks
+	private BillBusinnes billBusinnes;
+	
+	@Test 
+	public void debeConectarse() throws JMSException{
+		
+		
+		Mockito.when(queueConnectionFactory.createConnection()).thenReturn(connection);
+		
+		billBusinnes.connect();
+		
+		Mockito.verify(queueConnectionFactory).createConnection();
+	}
+	
+
+}

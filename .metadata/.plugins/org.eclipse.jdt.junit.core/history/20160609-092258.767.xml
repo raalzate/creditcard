@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BillServiceTest" project="CreditCardWeb" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="co.com.techandsolve.services.BillServiceTest" time="0.018">
+    <testcase name="debeRetornarValid" classname="co.com.techandsolve.services.BillServiceTest" time="0.018"/>
+  </testsuite>
+</testrun>

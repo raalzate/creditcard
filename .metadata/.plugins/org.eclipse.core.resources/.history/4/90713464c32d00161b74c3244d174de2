@@ -1,0 +1,15 @@
+package co.com.techandsolve.creditcard.business;
+
+import org.junit.Test;
+
+public class BillBusinness {
+	
+	
+	
+	@Test 
+	public void debeConectarse(){
+		
+	}
+	
+
+}
