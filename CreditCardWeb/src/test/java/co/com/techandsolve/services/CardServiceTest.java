@@ -11,7 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import co.com.techandsolve.creditcard.business.CardBusinnes;
+import co.com.techandsolve.creditcard.business.CardBusiness;
 import co.com.techandsolve.creditcard.entities.Card;
 import co.com.techandsolve.creditcard.entities.Client;
 import co.com.techandsolve.creditcard.services.CardService;
@@ -22,7 +22,7 @@ public class CardServiceTest {
 	private static final String CEDULA = "1234";
 
 	@Mock
-	private CardBusinnes cardBusinnes;
+	private CardBusiness cardBusinnes;
 
 	@InjectMocks
 	private CardService cardService;

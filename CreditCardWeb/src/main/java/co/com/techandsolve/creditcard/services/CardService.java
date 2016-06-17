@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.jboss.resteasy.spi.validation.ValidateRequest;
 
-import co.com.techandsolve.creditcard.business.CardBusinnes;
+import co.com.techandsolve.creditcard.business.CardBusiness;
 import co.com.techandsolve.creditcard.entities.Card;
 import co.com.techandsolve.creditcard.exception.LockedException;
 
@@ -23,7 +23,7 @@ import co.com.techandsolve.creditcard.exception.LockedException;
 public class CardService {
 	
 	@Inject
-	CardBusinnes cardBusinnes;
+	CardBusiness cardBusinnes;
     
 
 	@GET

@@ -28,7 +28,7 @@ public class CardBusinnesTest {
 	CardBean cardBean;
 
 	@InjectMocks
-	CardBusinnes cardBusiness;
+	CardBusiness cardBusiness;
 
 	private Card card1;
 	private Card card2;

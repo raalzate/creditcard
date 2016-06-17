@@ -59,3 +59,51 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-06-09 07:57:46.771
 !MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 4 1644298244 2016-06-17 16:28:01.405
+!MESSAGE Publish Failed for module CreditCardWeb
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:28:01.405
+!MESSAGE Copy of /home/raul-alzate/workspace/CreditCardEJB/build/classes/main/co/com/techandsolve/creditcard/business/CardBusinnes.class to /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/main/co/com/techandsolve/creditcard/business/CardBusinnes.class has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:28:01.405
+!MESSAGE Copy of /home/raul-alzate/workspace/CreditCardEJB/build/classes/main/co/com/techandsolve/creditcard/mdb/BillMDB.class to /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/main/co/com/techandsolve/creditcard/mdb/BillMDB.class has failed
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-06-17 16:28:02.155
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-06-17 16:28:09.195
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 4 1644298244 2016-06-17 16:40:53.142
+!MESSAGE Publish Failed for module CreditCardWeb
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:40:53.142
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/co/com/techandsolve/creditcard/business/CardBusinnes.class
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:40:53.142
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/co/com/techandsolve/creditcard/mdb/BillMDB.class
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:40:53.142
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/main/co/com/techandsolve/creditcard/business/CardBusinnes.class
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:40:53.142
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/main/co/com/techandsolve/creditcard/mdb/BillMDB.class
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 4 1644298244 2016-06-17 16:45:44.087
+!MESSAGE Publish Failed for module CreditCardWeb
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:45:44.087
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/co/com/techandsolve/creditcard/business/CardBusinnes.class
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:45:44.087
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/co/com/techandsolve/creditcard/mdb/BillMDB.class
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:45:44.087
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/main/co/com/techandsolve/creditcard/business/CardBusinnes.class
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 0 2016-06-17 16:45:44.087
+!MESSAGE Could not delete file /home/raul-alzate/workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_AS_7.11464814926224/tempRemoteDeploy/CreditCardEJB.jar/main/co/com/techandsolve/creditcard/mdb/BillMDB.class
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2016-06-17 17:01:26.222
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2016-06-17 17:01:26.351
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-06-17 17:01:26.744
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-06-17 17:01:36.164
+!MESSAGE Server Startup Succeeded
